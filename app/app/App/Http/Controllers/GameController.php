@@ -102,14 +102,19 @@ class GameController extends Controller
     }
 
     protected function whoHasWon( GameBoard $game ): ?GamePlayer {
-        // ##### TASK 8 - Check who has won ############################################################################
+        // ##### TASK 7 - Check who has won ############################################################################
         // =============================================================================================================
         // Here, you need to code a way to find out who has won the game.
         // This function needs to return null if nobody has won yet - you can use someoneHasWon( $game ) for this.
         // If someone has won, it needs to return either GamePlayer::Human or GamePlayer::Robot.
         // =============================================================================================================
 
-        return null;
+        if (someoneHasWon( $game )) {
+            return GamePlayer::Human || GamePlayer::Robot;
+        }
+        else {
+            return null;
+        }
     }
 
     /**
